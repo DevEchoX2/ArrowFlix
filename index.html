@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ArrowFlix</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+  <header class="af-header">
+    <div class="af-logo">ArrowFlix</div>
+    <nav class="af-nav">
+      <button id="logoutBtn" class="btn btn-outline">Logout</button>
+    </nav>
+  </header>
+
+  <main id="app" class="af-app">
+    <!-- Auth overlay -->
+    <section id="authOverlay" class="auth-overlay hidden">
+      <div class="poster-grid-bg" id="posterGridBg" aria-hidden="true"></div>
+      <div class="auth-card">
+        <h1 class="brand">ArrowFlix</h1>
+        <p class="subtitle">Sign in to watch</p>
+
+        <form id="loginForm" class="form">
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-field">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="••••••••" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+          <div class="form-alt">
+            <span>New to ArrowFlix?</span>
+            <button type="button" id="showRegister" class="link">Create account</button>
+          </div>
+          <p id="authMessage" class="auth-message" role="alert"></p>
+        </form>
+
+        <form id="registerForm" class="form hidden">
+          <div class="form-field">
+            <label for="regName">Name</label>
+            <input id="regName" type="text" placeholder="Your name" required />
+          </div>
+          <div class="form-field">
+            <label for="regEmail">Email</label>
+            <input id="regEmail" type="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-field">
+            <label for="regPassword">Password</label>
+            <input id="regPassword" type="password" placeholder="At least 8 characters" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Create account</button>
+          <div class="form-alt">
+            <span>Already have an account?</span>
+            <button type="button" id="showLogin" class="link">Sign in</button>
+          </div>
+          <p id="registerMessage" class="auth-message" role="alert"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- App content -->
+    <section id="home" class="af-home hidden">
+      <div class="hero" id="hero"></div>
+
+      <div class="rows">
+        <div class="row">
+          <h2>Trending Now</h2>
+          <div class="carousel" id="rowTrending"></div>
+        </div>
+
+        <div class="row">
+          <h2>Top Rated</h2>
+          <div class="carousel" id="rowTopRated"></div>
+        </div>
+
+        <div class="row">
+          <h2>Action</h2>
+          <div class="carousel" id="rowAction"></div>
+        </div>
+
+        <div class="row">
+          <h2>Comedy</h2>
+          <div class="carousel" id="rowComedy"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="af-footer">
+    <p>© ArrowFlix</p>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
